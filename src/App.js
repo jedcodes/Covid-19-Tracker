@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Header, InfoBoxes, Table, LineGraph } from "./Components";
+import SelectContextProvider from "./Context/SelectedContext";
+import CountriesProvider from "./Context/CountriesContext";
+import CasesProvider from "./Context/CasesContext";
+import { Card, CardContent } from "@material-ui/core";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <SelectContextProvider>
+        <CountriesProvider>
+          <div className="app__left">
+            <CasesProvider>
+              <Header />
+              <InfoBoxes />
+              <LineGraph />
+            </CasesProvider>
+          </div>
+          <Card className="app__right">
+            <CardContent>
+              <Table />
+            </CardContent>
+          </Card>
+        </CountriesProvider>
+      </SelectContextProvider>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,15 @@
+.infoBoxes {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.infoBoxes__infected > .MuiCard-root {
+  border-bottom: 10px solid rgba(0, 0, 255, 0.5) !important;
+}
+.infoBoxes__recovered > .MuiCard-root {
+  border-bottom: 10px solid rgba(0, 255, 0, 0.5) !important;
+}
+.infoBoxes__deaths > .MuiCard-root {
+  border-bottom: 10px solid rgba(255, 0, 0, 0.5) !important;
+}
